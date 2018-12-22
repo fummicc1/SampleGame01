@@ -11,24 +11,23 @@ import SpriteKit
 
 class Player: SKSpriteNode {
     
-    let textureAtlas = SKTextureAtlas(named: "Player")
-    
     let initialSize = CGSize(width: 100, height: 100)
     
     init() {
         
-        let texture = textureAtlas.textureNamed("player_start")
+        let texture = SKTexture(imageNamed: "player_start")
         
         super.init(texture: texture, color: .clear, size: initialSize)
         
         let moveFrames: [SKTexture] = [
-            textureAtlas.textureNamed("player_moving01"),
-            textureAtlas.textureNamed("player_moving02")
+            SKTexture(imageNamed: "player_moving01"),
+            SKTexture(imageNamed: "player_moving02")
         ]
         
         let moveAction = SKAction.animate(with: moveFrames, timePerFrame: 0.1)
         
-        self.run(moveAction)
+        self.run(SKAction.repeatForever(moveAction))
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
