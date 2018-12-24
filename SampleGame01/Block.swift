@@ -25,4 +25,14 @@ class Block: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func judgeColluision(with: CGRect) {
+        
+        if self.frame.intersects(with) {
+            
+            print("GameOver")
+            
+        }
+        
+    }
+    
 }

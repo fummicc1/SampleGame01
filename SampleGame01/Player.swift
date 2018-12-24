@@ -15,23 +15,37 @@ class Player: SKSpriteNode {
     
     init() {
         
-        let texture = SKTexture(imageNamed: "player_start")
+        let texture = SKTexture(imageNamed: "player_moving01")
         
         super.init(texture: texture, color: .clear, size: initialSize)
         
         let moveFrames: [SKTexture] = [
             SKTexture(imageNamed: "player_moving01"),
-            SKTexture(imageNamed: "player_moving02")
+            SKTexture(imageNamed: "player_moving02"),
+            SKTexture(imageNamed: "player_moving03")
         ]
         
         let moveAction = SKAction.animate(with: moveFrames, timePerFrame: 0.1)
         
         self.run(SKAction.repeatForever(moveAction))
         
+        addMoveAction()
+        
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required convenience init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+        
+        self.init()
+        
+    }
+    
+    func addMoveAction() {
+        
+        let goMove = SKAction.move(by: CGVector(dx: 300, dy: 0), duration: 3.0)
+        
+        self.run(SKAction.repeatForever(goMove))
+        
     }
     
     
