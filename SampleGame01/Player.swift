@@ -34,9 +34,9 @@ class Player: SKSpriteNode {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
         
-        self.init()
+//        self.init()
         
     }
     

@@ -12,15 +12,14 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
         if let skView = view as? SKView {
             
             let scene = SKScene(fileNamed: "GameScene") as! GameScene
             
             skView.presentScene(scene)
-            
         }
         
     }

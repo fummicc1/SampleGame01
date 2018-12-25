@@ -17,6 +17,10 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        let backGroundNode = SKSpriteNode(color: UIColor.blue, size: view.frame.size)
+        
+        addChild(backGroundNode)
+        
         player = Player()
         
         player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
@@ -27,9 +31,11 @@ class GameScene: SKScene {
         
         self.camera = _camera
         
-        let groundNode = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 20000, height: 100))
+        let groundNode = SKSpriteNode(color: UIColor.brown, size: CGSize(width: 20000, height: 50))
         
-        groundNode.physicsBody = SKPhysicsBody(rectangleOf: groundNode.frame.size)
+        groundNode.position = CGPoint(x: 0, y: -size.height / 2)
+        
+        groundNode.physicsBody = SKPhysicsBody(rectangleOf: groundNode.size)
         
         groundNode.physicsBody?.isDynamic = false
         
@@ -37,9 +43,16 @@ class GameScene: SKScene {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        player.physicsBody?.velocity = CGVector(dx: 0, dy: 400)
+        
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         
-        self.camera?.position = player.position // track the player's position
+        self.camera?.position.x = player.position.x // track the player's position
         
     }
 }
