@@ -37,6 +37,8 @@ class GameScene: SKScene {
     
     var groundNode: SKSpriteNode!
     
+    var coinArray: [Coin] = []
+    
     override func didMove(to view: SKView) {
         
         scaleMode = .aspectFill
