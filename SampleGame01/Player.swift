@@ -13,11 +13,17 @@ class Player: SKSpriteNode {
     
     let initialSize = CGSize(width: 100, height: 100)
     
+    var initialPosition: CGPoint = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: 100)
+    
+    var playerProgress: CGFloat!
+    
     init() {
         
         let texture = SKTexture(imageNamed: "player_moving01")
         
         super.init(texture: texture, color: .clear, size: initialSize)
+        
+        anchorPoint = CGPoint(x: 0, y: 1)
         
         let moveFrames: [SKTexture] = [
             SKTexture(imageNamed: "player_moving01"),
@@ -29,7 +35,9 @@ class Player: SKSpriteNode {
         
         self.run(SKAction.repeatForever(moveAction))
         
-        addMoveAction()
+        self.position = initialPosition
+        
+        self.zPosition = 1
         
     }
     
@@ -40,13 +48,10 @@ class Player: SKSpriteNode {
         
     }
     
-    func addMoveAction() {
+    func move() {
         
-        let goMove = SKAction.move(by: CGVector(dx: 300, dy: 0), duration: 3.0)
-        
-        self.run(SKAction.repeatForever(goMove))
+        self.physicsBody?.velocity = CGVector(dx: 10, dy: 0)
         
     }
-    
     
 }

@@ -15,6 +15,7 @@
 		D3083DF021CDD9810072765A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3083DEE21CDD9810072765A /* Main.storyboard */; };
 		D3083DF521CDD9820072765A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3083DF321CDD9820072765A /* LaunchScreen.storyboard */; };
 		D3BCDC8221CE27F4005A4EC0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCDC8121CE27F4005A4EC0 /* Player.swift */; };
+		D3C63B9F21D3511600AB95A5 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C63B9E21D3511600AB95A5 /* Background.swift */; };
 		D3F7041F21CE2C7A00862AA1 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7041E21CE2C7A00862AA1 /* Block.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		D3083DF421CDD9820072765A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3083DF621CDD9820072765A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BCDC8121CE27F4005A4EC0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		D3C63B9E21D3511600AB95A5 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		D3F7041E21CE2C7A00862AA1 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,12 +67,13 @@
 				D3083DF621CDD9820072765A /* Info.plist */,
 				D3083DE621CDD9810072765A /* GameScene.sks */,
 				D3083DE421CDD9810072765A /* AppDelegate.swift */,
+				D3C63B9E21D3511600AB95A5 /* Background.swift */,
 				D3F7041E21CE2C7A00862AA1 /* Block.swift */,
 				D3083DEA21CDD9810072765A /* GameScene.swift */,
 				D3083DEC21CDD9810072765A /* GameViewController.swift */,
 				D3BCDC8121CE27F4005A4EC0 /* Player.swift */,
-				D3083DF321CDD9820072765A /* LaunchScreen.storyboard */,
 				D304912921D10C2B00A1E70E /* Assets.xcassets */,
+				D3083DF321CDD9820072765A /* LaunchScreen.storyboard */,
 				D3083DEE21CDD9810072765A /* Main.storyboard */,
 			);
 			path = SampleGame01;
@@ -153,6 +156,7 @@
 				D3083DED21CDD9810072765A /* GameViewController.swift in Sources */,
 				D3083DE521CDD9810072765A /* AppDelegate.swift in Sources */,
 				D3F7041F21CE2C7A00862AA1 /* Block.swift in Sources */,
+				D3C63B9F21D3511600AB95A5 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
