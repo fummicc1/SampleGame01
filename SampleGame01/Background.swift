@@ -19,6 +19,8 @@ class Background: SKSpriteNode {
         
         anchorPoint = CGPoint(x: 0, y: 1)
         
+        createEncounters()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,6 +38,12 @@ class Background: SKSpriteNode {
         }
         
         return false
+        
+    }
+    
+    func createEncounters() {
+        
+        StageManager.shared.showEncounters(parentNode: self)
         
     }
     
