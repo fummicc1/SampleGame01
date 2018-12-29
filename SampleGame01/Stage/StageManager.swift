@@ -51,6 +51,10 @@ class StageManager {
                 
                 coin.position = CGPoint(x: i * 70, y: -(Int.random(in: 100...250)))
                 
+                coin.physicsBody = SKPhysicsBody(circleOfRadius: coin.size.width / 2)
+                coin.physicsBody?.categoryBitMask = CollisionType.coin
+                coin.physicsBody?.collisionBitMask = CollisionType.player
+                
                 encounters.append(coin)
                 
             } else {
@@ -58,6 +62,9 @@ class StageManager {
                 let bone = Bone()
                 
                 bone.position = CGPoint(x: i * 70, y: 100 - Int(UIScreen.main.bounds.size.height))
+                
+                bone.physicsBody = SKPhysicsBody(circleOfRadius: bone.size.width / 2)
+                
                 
                 encounters.append(bone)
                 

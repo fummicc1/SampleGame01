@@ -90,6 +90,10 @@ class GameScene: SKScene {
         
         player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
         
+        player.physicsBody?.categoryBitMask = CollisionType.player
+        player.physicsBody?.collisionBitMask = CollisionType.bone
+        player.physicsBody?.contactTestBitMask = CollisionType.bone
+        
         addChild(player)
         
     }
@@ -138,12 +142,14 @@ class GameScene: SKScene {
         groundNode.physicsBody?.isDynamic = false
         
         backgroundNode.addChild(groundNode)
-        
     }
-    
-    
-    
 }
 
 extension GameScene: SKPhysicsContactDelegate {
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        print(contact.bodyA.node is Bone)
+        print(contact.bodyB.node is Bone)
+    }
+    
 }
