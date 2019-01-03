@@ -13,35 +13,15 @@ class Coin: SKSpriteNode {
     
     var initialSize = CGSize(width: 50, height: 50)
     
-    var coinAnimation: SKAction!
-    
     init() {
         
-        let coinTexture = SKTexture(imageNamed: "coin")
+        let coinTexture = SKTexture(imageNamed: "coin1")
         
         super.init(texture: coinTexture, color: .clear, size: initialSize)
-        
-        setAnimation()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func setAnimation() {
-        
-        let animationTextures: [SKTexture] = [
-            SKTexture(imageNamed: "coin1"),
-            SKTexture(imageNamed: "coin2"),
-            SKTexture(imageNamed: "coin3"),
-            SKTexture(imageNamed: "coin4"),
-        ]
-        
-        let animation = SKAction.animate(with: animationTextures, timePerFrame: 1.0)
-        
-        self.coinAnimation = animation
-        
-    }
-    
 }
